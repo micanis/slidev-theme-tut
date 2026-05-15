@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import SlideNumber from '../components/SlideNumber.vue';
-
+import bgImage from "../assets/BackGround.png"
 </script>
 
 <template>
-  <div class="slidev-layout two-cols h-full w-full bg-[url('/BackGround.png')] bg-cover bg-no-repeat relative p-0">
+  <div class="slidev-layout two-cols h-full w-full  bg-cover bg-no-repeat relative p-0" :style="{backgroundImage: `url(${bgImage})`}">
     
     <div class="absolute title-wrapper">
       <div class="text-3xl font-bold text-neutral-900">
@@ -14,13 +14,13 @@ import SlideNumber from '../components/SlideNumber.vue';
 
     <div class="absolute content-area flex flex-col gap-4">
       
-      <div class="flex-grow grid grid-cols-2 gap-8">
+      <div class="flex-grow min-h-0 h-full grid grid-cols-2 grid-rows-1 gap-8">
         
-        <div class="relative h-full text-xl text-neutral-800 leading-relaxed">
+        <div class="relative min-h-0 h-full text-xl text-neutral-800 overflow-hidden">
           <slot name="left"/>
         </div>
         
-        <div class="relative h-full text-xl text-neutral-800 leading-relaxed">
+        <div class="relative min-h-0 h-full text-xl text-neutral-800 overflow-hidden">
           <slot name="right" />
         </div>
 

@@ -1,5 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import SlideNumber from '../components/SlideNumber.vue';
+import bgImage from "../assets/BackGround.png"
 import { computed, useAttrs } from 'vue'
 
 const attrs = useAttrs()
@@ -11,31 +12,30 @@ const gridStyle = computed(() => ({
   gap: '1.5rem'
 }))
 
-const getSizeStyle = (key) => {
+const getSizeStyle = (key: string) => {
   const val = attrs[key]
   if (!val) return {}
-  
+
   let w = 1
   let h = 1
-  
+
   if (typeof val === 'string') {
     const matchW = val.match(/w(\d+)/)
     const matchH = val.match(/h(\d+)/)
-    if (matchW) w = matchW[1]
-    if (matchH) h = matchH[1]
+    if (matchW) w = Number(matchW[1])
+    if (matchH) h = Number(matchH[1])
   }
-  
+
   return {
     gridColumn: `span ${w} / span ${w}`,
     gridRow: `span ${h} / span ${h}`
   }
 }
-
 </script>
 
 <template>
-  <div class="slidev-layout default h-full w-full bg-[url('/BackGround.png')] bg-cover bg-no-repeat relative p-0">
-    
+  <div class="slidev-layout bento h-full w-full bg-cover bg-no-repeat relative p-0" :style="{ backgroundImage: `url(${bgImage})` }">
+
     <div class="absolute title-wrapper">
       <div class="text-3xl font-bold text-neutral-900">
         <slot name="header" />
@@ -43,9 +43,9 @@ const getSizeStyle = (key) => {
     </div>
 
     <div class="absolute content-area">
-      
+
       <div class="w-full h-full" :style="gridStyle">
-        
+
         <div v-if="$slots.a" :style="getSizeStyle('sizeA')" class="relative h-full w-full">
           <slot name="a" />
         </div>
@@ -87,7 +87,6 @@ const getSizeStyle = (key) => {
   width: 93.75%;
   height: 69.44%;
 }
-
 
 .content-area :deep(p) {
   margin-bottom: 1rem;

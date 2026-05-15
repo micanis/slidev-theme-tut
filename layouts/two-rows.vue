@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import SlideNumber from '../components/SlideNumber.vue';
-
+import bgImage from "../assets/BackGround.png"
 </script>
 
 <template>
-  <div class="slidev-layout two-cols h-full w-full bg-[url('/BackGround.png')] bg-cover bg-no-repeat relative p-0">
-    
+  <div class="slidev-layout two-rows h-full w-full bg-cover bg-no-repeat relative p-0" :style="{ backgroundImage: `url(${bgImage})` }">
+
     <div class="absolute title-wrapper">
       <div class="text-3xl font-bold text-neutral-900">
         <slot name="header" />
@@ -13,13 +13,13 @@ import SlideNumber from '../components/SlideNumber.vue';
     </div>
 
     <div class="absolute content-area flex flex-col gap-4">
-      
+
       <div class="flex-grow grid grid-rows-2 gap-6">
-        
+
         <div class="relative h-full text-xl text-neutral-800 leading-relaxed">
           <slot name="top"/>
         </div>
-        
+
         <div class="relative h-full text-xl text-neutral-800 leading-relaxed">
           <slot name="bottom" />
         </div>
@@ -44,7 +44,6 @@ import SlideNumber from '../components/SlideNumber.vue';
     width:auto;
     height: 10%;
 }
-/* 先ほど確定した黄金比率コンテナ */
 .content-area {
   left: 3.23%;
   top: 18.06%;
@@ -56,7 +55,6 @@ import SlideNumber from '../components/SlideNumber.vue';
   margin-bottom: 1rem;
 }
 
-/* 結論エリアの中のpタグは、中央揃えのために余白を消す */
 .content-area :deep(.shrink-0 p) {
   margin: 0 !important;
 }

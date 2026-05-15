@@ -4,12 +4,13 @@ layout: cover
 ---
 
 ::header::
-東京工科大学学生用スライドテンプレート
+東京工科大学用 Slidev テンプレート
 
 ::date::
-2026年04月06日
+20XX年YY月ZZ日
 
-G2126038 山中春輝
+::default::
+X9999999 Name
 
 ---
 layout: toc
@@ -45,7 +46,7 @@ layout: two-cols
 ---
 
 ::header::
-2大AIツールの比較(tow-cols layout)
+2大AIツールの比較(two-cols layout)
 
 ::left::
 **ChatGPT**

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import SlideNumber from '../components/SlideNumber.vue';
-
+import bgImage from "../assets/BackGround.png"
 </script>
 
 <template>
-  <div class="slidev-layout default h-full w-full bg-[url('/BackGround.png')] bg-cover bg-no-repeat relative p-0">
+  <div class="slidev-layout default h-full w-full bg-cover bg-no-repeat relative p-0" :style="{ backgroundImage: `url(${bgImage})` }">
     
     <div class="absolute title-wrapper">
       <div class="text-3xl font-bold text-neutral-900">
