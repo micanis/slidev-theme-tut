@@ -8,7 +8,7 @@ import bgImage from "../assets/BackGround.png"
     <div class="absolute top-[40%] left-0 w-full text-center">
 
       <div class="title-wrapper text-4xl font-bold text-neutral-900">
-        <slot name="header" />
+        <slot name="title" />
       </div>
 
       <div class="date-wrapper mt-10 text-xl font-normal text-neutral-800 flex flex-col gap-0">

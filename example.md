@@ -3,7 +3,7 @@ theme: ./
 layout: cover
 ---
 
-::header::
+::title::
 東京工科大学用 Slidev テンプレート
 
 ::date::
@@ -16,7 +16,7 @@ X9999999 Name
 layout: toc
 ---
 
-::header::
+::title::
 目次
 
 ---
@@ -29,7 +29,7 @@ layout: section
 layout: default
 ---
 
-::header::
+::title::
 現在主流のチャット型AI(default layout)
 
 ::default::
@@ -45,7 +45,7 @@ layout: default
 layout: two-cols
 ---
 
-::header::
+::title::
 2大AIツールの比較(two-cols layout)
 
 ::left::
@@ -71,7 +71,7 @@ layout: two-cols
 layout: three-cols
 ---
 
-::header::
+::title::
 3大ツールの特徴（+Claude）(three-cols layout)
 
 ::left::
@@ -102,7 +102,7 @@ layout: three-cols
 layout: two-rows
 ---
 
-::header::
+::title::
 得意領域の違い(two-rows layout)
 
 ::top::
@@ -131,7 +131,7 @@ rows: 2
 sizeA: w2 h2
 ---
 
-::header::
+::title::
 いろいろな分割例 その1：メイン図解＋右サイドバー
 
 ::a::
@@ -150,7 +150,7 @@ rows: 2
 sizeA: w3 h1
 ---
 
-::header::
+::title::
 いろいろな分割例 その2：トップ見出し＋3カラム
 
 ::a::
@@ -173,7 +173,7 @@ sizeA: w1 h2
 sizeB: w2 h2
 ---
 
-::header::
+::title::
 いろいろな分割例 その3：左サイドメニュー＋メイン
 
 ::a::
@@ -188,7 +188,7 @@ cols: 2
 rows: 2
 ---
 
-::header::
+::title::
 いろいろな分割例 その4：4象限（2x2グリッド）
 
 
@@ -215,7 +215,7 @@ sizeD: w2 h1
 sizeE: w1 h1
 ---
 
-::header::
+::title::
 いろいろな分割例 その5：複雑なBentoスタイル
 
 ::a::
@@ -243,7 +243,7 @@ layout: section
 layout: default
 ---
 
-::header::
+::title::
 結論
 
 ::default::

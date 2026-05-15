@@ -38,7 +38,7 @@ const getSizeStyle = (key: string) => {
 
     <div class="absolute title-wrapper">
       <div class="text-3xl font-bold text-neutral-900">
-        <slot name="header" />
+        <slot name="title" />
       </div>
     </div>
 
