@@ -12,21 +12,21 @@ import bgImage from "../assets/BackGround.png"
       </div>
     </div>
 
-    <div class="absolute content-area flex flex-col gap-4">
+    <div class="absolute content-area">
 
-      <div class="flex-grow grid grid-rows-2 gap-6">
+      <div class="min-h-0 grid grid-rows-2 gap-6">
 
-        <div class="relative h-full text-xl text-neutral-800 leading-relaxed">
+        <div class="relative h-full text-xl text-neutral-800 leading-relaxed overflow-hidden">
           <slot name="top"/>
         </div>
 
-        <div class="relative h-full text-xl text-neutral-800 leading-relaxed">
+        <div class="relative h-full text-xl text-neutral-800 leading-relaxed overflow-hidden">
           <slot name="bottom" />
         </div>
 
       </div>
 
-      <div v-if="$slots.conc" class="shrink-0 min-h-[2.5rem]  w-full text-2xl font-bold flex items-center justify-center">
+      <div class="w-full text-2xl font-bold flex items-center justify-center">
         <slot name="conc" />
       </div>
 
@@ -49,13 +49,17 @@ import bgImage from "../assets/BackGround.png"
   top: 18.06%;
   width: 93.75%;
   height: 69.44%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(2.5rem, auto);
+  gap: 1rem;
+  overflow: hidden;
 }
 
 .content-area :deep(p) {
   margin-bottom: 1rem;
 }
 
-.content-area :deep(.shrink-0 p) {
+.content-area > div:last-child :deep(p) {
   margin: 0 !important;
 }
 </style>
