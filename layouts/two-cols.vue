@@ -14,7 +14,7 @@ import bgImage from "../assets/BackGround.png"
 
     <div class="absolute content-area">
 
-      <div class="min-h-0 grid grid-cols-2 grid-rows-1 gap-8">
+      <div class="min-h-0 h-full grid grid-cols-2 grid-rows-1 gap-8">
 
         <div class="relative min-h-0 h-full text-xl text-neutral-800 overflow-hidden">
           <slot name="left"/>

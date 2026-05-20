@@ -14,7 +14,7 @@ import bgImage from "../assets/BackGround.png"
 
     <div class="absolute content-area">
 
-      <div class="min-h-0 grid grid-rows-2 gap-6">
+      <div class="min-h-0 h-full grid grid-rows-2 gap-6">
 
         <div class="relative h-full text-xl text-neutral-800 leading-relaxed overflow-hidden">
           <slot name="top"/>
