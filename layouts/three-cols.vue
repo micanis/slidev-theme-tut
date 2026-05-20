@@ -30,7 +30,7 @@ import bgImage from "../assets/BackGround.png"
 
       </div>
 
-      <div class="w-full text-2xl font-bold text-neutral-800 flex items-center justify-center">
+      <div v-if="$slots.conc" class="w-full text-2xl font-bold text-neutral-800 flex items-center justify-center">
         <slot name="conc" />
       </div>
 
