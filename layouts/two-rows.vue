@@ -27,7 +27,7 @@ import bgImage from "../assets/BackGround.png"
 
         </div>
 
-        <div v-if="$slots.conc" class="w-full text-2xl font-bold text-neutral-800 flex items-center justify-center">
+        <div v-if="$slots.conc" class="conc-slot w-full text-2xl font-bold text-neutral-800 flex items-center justify-center">
           <slot name="conc" />
         </div>
 
@@ -66,7 +66,7 @@ import bgImage from "../assets/BackGround.png"
   margin-bottom: 1rem;
 }
 
-.content-grid > div:last-child :deep(p) {
+.content-grid :deep(.conc-slot p) {
   margin: 0 !important;
 }
 </style>
