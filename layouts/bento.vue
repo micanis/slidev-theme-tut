@@ -42,7 +42,7 @@ const getSizeStyle = (key: string) => {
       </div>
     </div>
 
-    <div class="absolute content-area">
+    <div v-fit class="absolute content-area">
 
       <div class="w-full h-full" :style="gridStyle">
 

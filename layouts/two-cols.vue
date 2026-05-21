@@ -12,15 +12,15 @@ import bgImage from "../assets/BackGround.png"
       </div>
     </div>
 
-    <div class="absolute content-area">
+    <div v-fit class="absolute content-area">
 
       <div class="min-h-0 h-full grid grid-cols-2 grid-rows-1 gap-8">
 
-        <div class="relative min-h-0 h-full text-xl text-neutral-800 overflow-hidden">
+        <div class="relative min-h-0 h-full text-xl leading-relaxed text-neutral-800 overflow-hidden">
           <slot name="left"/>
         </div>
 
-        <div class="relative min-h-0 h-full text-xl text-neutral-800 overflow-hidden">
+        <div class="relative min-h-0 h-full text-xl leading-relaxed text-neutral-800 overflow-hidden">
           <slot name="right" />
         </div>
 

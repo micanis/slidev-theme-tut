@@ -12,7 +12,7 @@ import bgImage from "../assets/BackGround.png"
       </div>
     </div>
 
-    <div class="absolute content-area">
+    <div v-fit class="absolute content-area">
 
       <div class="min-h-0 h-full grid grid-rows-2 gap-6">
 

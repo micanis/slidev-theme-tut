@@ -12,7 +12,7 @@ import bgImage from "../assets/BackGround.png"
       </div>
     </div>
 
-    <div class="absolute content-area text-xl text-neutral-800 leading-relaxed">
+    <div v-fit class="absolute content-area text-xl text-neutral-800 leading-relaxed">
       <slot />
     </div>
 
