@@ -1,10 +1,10 @@
 export const vFit = {
   mounted(el: HTMLElement) {
     const wrapper = document.createElement('div')
-    wrapper.style.cssText = 'width:100%;height:100%;overflow:hidden;display:flex;flex-direction:column;'
+    wrapper.style.cssText = 'width:100%;height:100%;overflow:hidden;display:grid;grid-template-rows:1fr;'
 
     const inner = document.createElement('div')
-    inner.style.cssText = 'width:100%;height:100%;transform-origin:top left;display:flex;flex-direction:column;'
+    inner.style.cssText = 'width:100%;height:100%;min-height:0;transform-origin:top left;'
 
     while (el.firstChild) {
       inner.appendChild(el.firstChild)
