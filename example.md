@@ -4,13 +4,13 @@ layout: cover
 ---
 
 ::title::
-東京工科大学用 Slidev テンプレート
+slidev-theme-tut サンプル
 
 ::date::
-20XX年YY月ZZ日
+<SlideDate date="20260607" format="ja" />
 
 ::default::
-X9999999 Name
+X9999999 Sample Name
 
 ---
 layout: toc
@@ -23,106 +23,126 @@ layout: toc
 layout: section
 ---
 
-# 代表的な生成AIの比較
+# 基本レイアウト
 
 ---
 layout: default
 ---
 
 ::title::
-現在主流のチャット型AI(default layout)
+default : 本文のみ
 
 ::default::
-現在、ビジネスや日常で広く使われている代表的なAIツールは以下の4つです。
-それぞれの強みを理解し、目的に合わせて使い分けることが重要です。
+このレイアウトは、タイトル領域と本文領域で構成されます。
+本文領域には通常の Markdown をそのまま配置できます。
 
-- **ChatGPT (OpenAI)**：世界的なAIブームの火付け役。万能で自然な対話が得意。
-- **Gemini (Google)**：検索エンジンや各種Googleアプリとの連携が強力。
-- **Claude (Anthropic)**：極めて自然な日本語と、長文の読み込み・要約に強い。
-- **Copilot (Microsoft)**：WindowsやOffice製品に組み込まれた、最も身近なAI。
+- 箇条書き
+- **強調**
+- `inline code`
+- 表や画像などの Slidev 標準要素
+
+---
+layout: default
+---
+
+::title::
+default : 本文 + まとめ
+
+::default::
+`::conc::` スロットを追加すると、本文の下にまとめ欄が表示されます。
+本文領域は残りの高さに収まるように配置されます。
+
+| 項目 | 内容 |
+| --- | --- |
+| title | スライド上部のタイトル |
+| default | メイン本文 |
+| conc | 下部のまとめ |
+
+::conc::
+まとめ欄は結論や次のアクションを短く示す場所です。
 
 ---
 layout: two-cols
 ---
 
 ::title::
-2大AIツールの比較(two-cols layout)
+two-cols : 左右 2 分割
 
 ::left::
-**ChatGPT**
+**left スロット**
 
-- **知名度No.1のパイオニア**
-  世界にAIを普及させた立役者。
-- **圧倒的な汎用性と対話力**
-  人間らしく自然な会話が得意で、自分専用のAI（GPTs）を作ることも可能。
+- 比較対象 A
+- 前提条件
+- メリット
+- 注意点
 
 ::right::
-**Gemini**
+**right スロット**
 
-- **Googleの強力なインフラ**
-  ドキュメントやGmailなどとシームレスに連動。
-- **検索に強い**
-  最新の情報をGoogle検索から瞬時に集めて回答するのが得意。
+- 比較対象 B
+- 実装案
+- デメリット
+- 判断材料
 
 ::conc::
-「拡張性のChatGPT」か、「最新情報と連携のGemini」かで使い分けるのがオススメ！
+左右比較の結論は `conc` にまとめると読みやすくなります。
 
 ---
 layout: three-cols
 ---
 
 ::title::
-3大ツールの特徴（+Claude）(three-cols layout)
+three-cols : 3 分割
 
 ::left::
-**ChatGPT**
+**left**
 
-- OpenAIが開発
-- 圧倒的なユーザー数
-- プラグインなど拡張機能が豊富で、どんな用途にも使える万能型
+- 課題
+- 背景
+- 現状
 
 ::center::
-**Claude**
+**center**
 
-- Anthropicが開発
-- 人間と見間違うほど自然な日本語
-- 長い文章の処理や、プログラミングコードの生成に非常に優秀
+- 方針
+- 手順
+- 判断基準
 
 ::right::
-**Gemini**
+**right**
 
-- Googleが開発
-- 最新情報の検索と要約に強い
-- 無料枠でも処理速度が速く、制限が緩いため日常使いに最適
+- 結果
+- 効果
+- 次の課題
 
 ::conc::
-日常使いは「Gemini」、執筆や開発は「Claude」、万能アシスタントは「ChatGPT」！
+3 つの観点を並べて説明するスライドに向いています。
 
 ---
 layout: two-rows
 ---
 
 ::title::
-得意領域の違い(two-rows layout)
+two-rows : 上下 2 分割
 
 ::top::
-**ChatGPT：クリエイティブな対話と拡張性**
-世界初の対話型AIとして登場以来、圧倒的なデータ量で自然な対話を可能にしています。
-文章作成の壁打ち相手や、アイデア出しのパートナーとして非常に優秀です。
+**top スロット**
+
+上段には概要、前提、図解、全体像などを置くと見通しがよくなります。
 
 ::bottom::
-**Gemini：リアルタイムな情報収集と作業効率化**
-Googleの強みを活かし、今日のニュースや最新トレンドを瞬時にまとめてくれます。
-表計算ソフトなどのビジネスツールとの相性も良く、日々の業務を大きく効率化します。
+**bottom スロット**
+
+下段には詳細、補足、比較表、手順などを置けます。縦方向に話の流れを作りたい場合に使います。
 
 ::conc::
-どちらも日々進化を続けているため、まずは両方触ってみて好みの相棒を見つけましょう。
+上下の関係性をまとめ欄で補足できます。
 
 ---
 layout: section
 ---
 
-# 様々なレイアウト作成
+# Bento レイアウト
 
 ---
 layout: bento
@@ -132,16 +152,19 @@ sizeA: w2 h2
 ---
 
 ::title::
-いろいろな分割例 その1：メイン図解＋右サイドバー
+bento : メイン + サイド
 
 ::a::
-<div class="w-full h-full bg-blue-200 rounded-lg flex items-center justify-center font-bold text-2xl">A (w2 h2)</div>
+<div class="w-full h-full bg-blue-100 border-2 border-blue-400 rounded-lg flex flex-col items-center justify-center gap-3 text-blue-950">
+  <div class="text-3xl font-bold">slot a</div>
+  <div class="text-xl">sizeA: w2 h2</div>
+</div>
 
 ::b::
-<div class="w-full h-full bg-green-200 rounded-lg flex items-center justify-center font-bold text-2xl">B (w1 h1)</div>
+<div class="w-full h-full bg-green-100 border-2 border-green-400 rounded-lg flex items-center justify-center text-2xl font-bold text-green-950">slot b</div>
 
 ::c::
-<div class="w-full h-full bg-emerald-200 rounded-lg flex items-center justify-center font-bold text-2xl">C (w1 h1)</div>
+<div class="w-full h-full bg-emerald-100 border-2 border-emerald-400 rounded-lg flex items-center justify-center text-2xl font-bold text-emerald-950">slot c</div>
 
 ---
 layout: bento
@@ -151,58 +174,19 @@ sizeA: w3 h1
 ---
 
 ::title::
-いろいろな分割例 その2：トップ見出し＋3カラム
+bento : 見出し + 3 項目
 
 ::a::
-<div class="w-full h-full bg-purple-200 rounded-lg flex items-center justify-center font-bold text-2xl">A (w3 h1) : 概要・結論</div>
+<div class="w-full h-full bg-purple-100 border-2 border-purple-400 rounded-lg flex items-center justify-center text-3xl font-bold text-purple-950">slot a / sizeA: w3 h1</div>
 
 ::b::
-<div class="w-full h-full bg-orange-200 rounded-lg flex items-center justify-center font-bold text-2xl">B (w1 h1) : 手法1</div>
+<div class="w-full h-full bg-orange-100 border-2 border-orange-400 rounded-lg flex items-center justify-center text-2xl font-bold text-orange-950">slot b</div>
 
 ::c::
-<div class="w-full h-full bg-amber-200 rounded-lg flex items-center justify-center font-bold text-2xl">C (w1 h1) : 手法2</div>
+<div class="w-full h-full bg-amber-100 border-2 border-amber-400 rounded-lg flex items-center justify-center text-2xl font-bold text-amber-950">slot c</div>
 
 ::d::
-<div class="w-full h-full bg-yellow-200 rounded-lg flex items-center justify-center font-bold text-2xl">D (w1 h1) : 手法3</div>
-
----
-layout: bento
-cols: 3
-rows: 2
-sizeA: w1 h2
-sizeB: w2 h2
----
-
-::title::
-いろいろな分割例 その3：左サイドメニュー＋メイン
-
-::a::
-<div class="w-full h-full bg-rose-200 rounded-lg flex items-center justify-center font-bold text-2xl">A (w1 h2)<br>前提条件など</div>
-
-::b::
-<div class="w-full h-full bg-pink-200 rounded-lg flex items-center justify-center font-bold text-2xl">B (w2 h2)<br>メインコンテンツ</div>
-
----
-layout: bento
-cols: 2
-rows: 2
----
-
-::title::
-いろいろな分割例 その4：4象限（2x2グリッド）
-
-
-::a::
-<div class="w-full h-full bg-cyan-200 rounded-lg flex items-center justify-center font-bold text-2xl">A (自動)</div>
-
-::b::
-<div class="w-full h-full bg-sky-200 rounded-lg flex items-center justify-center font-bold text-2xl">B (自動)</div>
-
-::c::
-<div class="w-full h-full bg-blue-200 rounded-lg flex items-center justify-center font-bold text-2xl">C (自動)</div>
-
-::d::
-<div class="w-full h-full bg-indigo-200 rounded-lg flex items-center justify-center font-bold text-2xl">D (自動)</div>
+<div class="w-full h-full bg-yellow-100 border-2 border-yellow-400 rounded-lg flex items-center justify-center text-2xl font-bold text-yellow-950">slot d</div>
 
 ---
 layout: bento
@@ -210,69 +194,379 @@ cols: 4
 rows: 2
 sizeA: w1 h2
 sizeB: w2 h1
-sizeC: w1 h1
 sizeD: w2 h1
-sizeE: w1 h1
 ---
 
 ::title::
-いろいろな分割例 その5：複雑なBentoスタイル
+bento : 複雑な配置
 
 ::a::
-<div class="w-full h-full bg-slate-300 rounded-lg flex items-center justify-center font-bold text-2xl">A (w1 h2)</div>
+<div class="w-full h-full bg-rose-100 border-2 border-rose-400 rounded-lg flex items-center justify-center text-2xl font-bold text-rose-950">a<br>w1 h2</div>
 
 ::b::
-<div class="w-full h-full bg-gray-300 rounded-lg flex items-center justify-center font-bold text-2xl">B (w2 h1)</div>
+<div class="w-full h-full bg-sky-100 border-2 border-sky-400 rounded-lg flex items-center justify-center text-2xl font-bold text-sky-950">b / w2 h1</div>
 
 ::c::
-<div class="w-full h-full bg-zinc-300 rounded-lg flex items-center justify-center font-bold text-2xl">C (w1 h1)</div>
+<div class="w-full h-full bg-cyan-100 border-2 border-cyan-400 rounded-lg flex items-center justify-center text-2xl font-bold text-cyan-950">c</div>
 
 ::d::
-<div class="w-full h-full bg-neutral-300 rounded-lg flex items-center justify-center font-bold text-2xl">D (w2 h1)</div>
+<div class="w-full h-full bg-lime-100 border-2 border-lime-400 rounded-lg flex items-center justify-center text-2xl font-bold text-lime-950">d / w2 h1</div>
 
 ::e::
-<div class="w-full h-full bg-stone-300 rounded-lg flex items-center justify-center font-bold text-2xl">E (w1 h1)</div>
-
----
-layout: default
----
-
-::title::
-v-fit テスト（はみ出しコンテンツ）
-
-::default::
-- **項目1**: これはテスト用の長いコンテンツです。枠をはみ出すかどうかを確認します。
-- **項目2**: 2行目のコンテンツ。v-fit ディレクティブが正しく動作すれば自動縮小されます。
-- **項目3**: 3行目。さらにコンテンツを追加していきます。
-- **項目4**: 4行目。まだまだ続きます。
-- **項目5**: 5行目。どんどん追加。
-- **項目6**: 6行目。そろそろはみ出すかもしれません。
-- **項目7**: 7行目。継続してテスト。
-- **項目8**: 8行目。まだ大丈夫でしょうか。
-- **項目9**: 9行目。限界に近づいています。
-- **項目10**: 10行目。これで収まるか？
-- **項目11**: 11行目。さらに追加。
-- **項目12**: 12行目。もう少し。
-- **項目13**: 13行目。ここまで来たら確実にはみ出すはず。
-- **項目14**: 14行目。最後の一押し。
-- **項目15**: 15行目。これでテスト完了。
+<div class="w-full h-full bg-zinc-100 border-2 border-zinc-400 rounded-lg flex items-center justify-center text-2xl font-bold text-zinc-950">e</div>
 
 ---
 layout: section
 ---
 
-# 結論
+# コンポーネントと自動調整
 
 ---
 layout: default
 ---
 
 ::title::
-結論
+components : SlideDate / SlideNumber
 
 ::default::
-<div class="w-full h-full flex justify-center items-center">
+`SlideNumber` は各レイアウトの右下に自動表示されます。
+
+`SlideDate` は任意の場所で利用できます。
+
+| format | 表示 |
+| --- | --- |
+| ja | <SlideDate date="20260607" format="ja" /> |
+| slash | <SlideDate date="20260607" format="slash" /> |
+| dot | <SlideDate date="20260607" format="dot" /> |
+| hyphen | <SlideDate date="20260607" format="hyphen" /> |
+
+::conc::
+印刷時は `date` prop、通常表示時は今日の日付を表示します。
+
+---
+layout: default
+---
+
+::title::
+v-fit : はみ出し時の文字サイズ調整
+
+::default::
+このスライドは、本文量が多い場合に文字サイズが自動で下がることを確認するためのサンプルです。
+
+- 1. 長い文章や箇条書きが増えると、本文領域の高さを超えることがあります。
+- 2. `v-fit` はレイアウト領域に収まるように文字サイズを調整します。
+- 3. `text-xl` のようなクラスが付いた要素も調整対象です。
+- 4. 表示サイズの変更や内容変更に追従します。
+- 5. まとめ欄がある場合は、本文とまとめ欄を含む領域全体で収まりを判定します。
+- 6. 文字サイズには下限があるため、極端に長い内容は最終的に非表示領域が残る場合があります。
+- 7. スライドとして読みやすい分量に保つための補助機能として使います。
+- 8. 実際の発表資料では、重要な語句を短く配置すると見やすくなります。
+- 9. 図や表を組み合わせる場合も、領域内に収まるか確認できます。
+- 10. このサンプルで縮小の挙動を確認できます。
+
+::conc::
+領域からはみ出す場合は、文字サイズを自動調整します。
+
+---
+layout: two-cols
+---
+
+::title::
+v-fit : two-cols の確認
+
+::left::
+**left スロット**
+
+- 1. カラム内の本文量が多い場合の確認です。
+- 2. 左カラムだけが長くても、レイアウト全体で文字サイズが調整されます。
+- 3. カラム要素には `overflow-hidden` が付いています。
+- 4. その内側のはみ出しも検出できる必要があります。
+- 5. 箇条書きが続くケースを想定しています。
+- 6. 説明文が長い場合でも、読み切れるサイズまで自動で縮小します。
+- 7. 左右の文字サイズは同じ倍率で揃います。
+- 8. 片側だけ極端に小さくなる見た目を避けます。
+- 9. さらに文章を追加して、通常サイズでは確実にカラム高さを超える状態にします。
+- 10. カラム内で折り返しが増えるほど、実際の本文高さも増えていきます。
+- 11. 右カラムが短い場合でも、左カラムのはみ出しを基準に全体を縮小します。
+- 12. この行まで表示されていれば、隠れていた内容が縮小で見えるようになっています。
+
+::right::
+**right スロット**
+
+- 右側は短めの内容です。
+- 比較対象や補足情報を置きます。
+- 左右比較の見た目も確認できます。
+
+::conc::
+two-cols でもカラム内のはみ出しを検出します。
+
+---
+layout: two-cols
+---
+
+::title::
+v-fit : two-cols の確認（conc なし）
+
+::left::
+**left スロット**
+
+- 1. カラム内の本文量が多い場合の確認です。
+- 2. 左カラムだけが長くても、レイアウト全体で文字サイズが調整されます。
+- 3. カラム要素には `overflow-hidden` が付いています。
+- 4. その内側のはみ出しも検出できる必要があります。
+- 5. 箇条書きが続くケースを想定しています。
+- 6. 説明文が長い場合でも、読み切れるサイズまで自動で縮小します。
+- 7. 左右の文字サイズは同じ倍率で揃います。
+- 8. 片側だけ極端に小さくなる見た目を避けます。
+- 9. さらに文章を追加して、通常サイズでは確実にカラム高さを超える状態にします。
+- 10. カラム内で折り返しが増えるほど、実際の本文高さも増えていきます。
+- 11. 右カラムが短い場合でも、左カラムのはみ出しを基準に全体を縮小します。
+- 12. この行まで表示されていれば、隠れていた内容が縮小で見えるようになっています。
+
+::right::
+**right スロット**
+
+- 右側は短めの内容です。
+- 比較対象や補足情報を置きます。
+- 左右比較の見た目も確認できます。
+
+---
+layout: three-cols
+---
+
+::title::
+v-fit : three-cols の確認
+
+::left::
+**left**
+
+- 1. 3 カラムでは各カラムの幅が狭くなります。
+- 2. 折り返しが増えるため、高さ方向にはみ出しやすくなります。
+- 3. このカラムを長めにして検出を確認します。
+- 4. `scrollHeight` が各カラムで増えるケースです。
+- 5. 子孫要素単位の判定が効いていれば縮小されます。
+- 6. 長い文章を含む箇条書きでも収まるか確認します。
+- 7. three-cols は 1 カラムあたりの幅が狭いため、文章がすぐ複数行になります。
+- 8. さらに行を増やして、通常サイズでは下部が隠れる条件を作ります。
+- 9. 左カラムだけが長い場合でも、3 カラム全体を同じ倍率で縮小します。
+- 10. この最後の行が見えていれば、カラム内のはみ出し検出が動いています。
+
+::center::
+**center**
+
+- 比較軸
+- 評価方法
+- 補足
+
+::right::
+**right**
+
+- 結果
+- 注意点
+- 次の作業
+
+::conc::
+three-cols でも狭いカラム内の折り返しを含めて確認します。
+
+---
+layout: two-rows
+---
+
+::title::
+v-fit : two-rows の確認
+
+::top::
+**top スロット**
+
+- 1. 上段に長い内容を入れた場合の確認です。
+- 2. two-rows は縦方向に領域が分かれるため、各段の高さが小さくなります。
+- 3. そのため default よりも本文がはみ出しやすくなります。
+- 4. 上段の `overflow-hidden` で隠れる前に、子要素のはみ出しを検出します。
+- 5. 自動縮小が効けば、下段とまとめ欄を含めて収まります。
+- 6. 文章量が増えたスライドの確認に使えます。
+
+::bottom::
+**bottom スロット**
+
+- 下段は短めの補足です。
+- 上段が長いときにも全体の文字サイズが揃うか確認します。
+
+::conc::
+two-rows でも段内のはみ出しを検出します。
+
+---
+layout: default
+---
+
+::title::
+v-fit : コードブロックの確認
+
+::default::
+通常サイズでは縦方向に長すぎるコードブロックを配置し、`pre` / `code` の文字サイズも縮小されるか確認します。
+
+```ts
+type FitTarget = {
+  id: string
+  clientWidth: number
+  clientHeight: number
+  scrollWidth: number
+  scrollHeight: number
+}
+
+const elementFits = (target: FitTarget) => {
+  const heightFits =
+    !target.clientHeight ||
+    target.scrollHeight <= target.clientHeight + 1
+
+  const widthFits =
+    !target.clientWidth ||
+    target.scrollWidth <= target.clientWidth + 1
+
+  return heightFits && widthFits
+}
+
+const targets: FitTarget[] = [
+  { id: 'wrapper', clientWidth: 960, clientHeight: 500, scrollWidth: 960, scrollHeight: 520 },
+  { id: 'pre', clientWidth: 880, clientHeight: 360, scrollWidth: 910, scrollHeight: 420 },
+  { id: 'code', clientWidth: 880, clientHeight: 360, scrollWidth: 910, scrollHeight: 420 },
+]
+
+for (const target of targets) {
+  console.log(target.id, elementFits(target) ? 'fits' : 'overflow')
+}
+```
+
+::conc::
+コードブロックの縦方向のはみ出しを確認します。
+
+---
+layout: default
+---
+
+::title::
+v-fit : 長いコード行の確認
+
+::default::
+横方向に長い行を含むコードブロックを配置し、`scrollWidth` の超過に反応して縮小されるか確認します。
+
+```ts
+const readableConfig = createPresentationConfig({ theme: 'slidev-theme-tut', layout: 'default', contentArea: { left: '3.23%', top: '18.06%', width: '93.75%', height: '69.44%' }, fitting: { minScale: 0.35, observes: ['wrapper', 'inner', 'pre', 'code', 'table', 'custom-elements'] } })
+
+const longMessage = 'This line is intentionally long so the code block becomes wider than the available slide content area before v-fit has a chance to reduce the font size.'
+
+export const result = readableConfig.fitting.observes.map((target) => ({
+  target,
+  shouldFitInsideSlide: true,
+  message: longMessage,
+}))
+```
+
+- 長い 1 行が右端で欠けずに見えるか確認します。
+- コードブロックの上下余白を含めて本文領域に収まるか確認します。
+
+::conc::
+コードブロックの横方向のはみ出しを確認します。
+
+---
+layout: two-cols
+---
+
+::title::
+v-fit : two-cols のコード確認
+
+::left::
+**left スロット**
+
+```ts
+const slides = [
+  { layout: 'default', checks: ['body', 'summary', 'code-block'] },
+  { layout: 'two-cols', checks: ['left', 'right', 'code-block'] },
+  { layout: 'three-cols', checks: ['left', 'center', 'right'] },
+  { layout: 'two-rows', checks: ['top', 'bottom', 'code-block'] },
+]
+
+const activeChecks = slides.flatMap((slide) =>
+  slide.checks.map((check) => `${slide.layout}:${check}`)
+)
+
+console.log(activeChecks.join('\n'))
+```
+
+::right::
+**right スロット**
+
+- 左カラムのコード量が多い場合の確認です。
+- 右カラムは通常の Markdown を置きます。
+- コードブロックだけが大きい場合でも、左右の文字サイズが同じ倍率で揃うか確認します。
+- まとめ欄込みで全体が収まるか確認します。
+
+::conc::
+分割レイアウト内のコードブロックも縮小対象です。
+
+---
+layout: two-rows
+---
+
+::title::
+v-fit : two-rows のコード確認
+
+::top::
+**top スロット**
+
+```ts
+const update = () => {
+  resetKnownFontSizes()
+  applyScale(1)
+
+  if (fits()) return
+
+  let low = 0.35
+  let high = 1
+
+  for (let i = 0; i < 12; i += 1) {
+    const scale = (low + high) / 2
+    applyScale(scale)
+
+    if (fits()) {
+      low = scale
+    } else {
+      high = scale
+    }
+  }
+
+  applyScale(low)
+}
+```
+
+::bottom::
+**bottom スロット**
+
+- 上段にコードブロックを置いた場合の確認です。
+- 段の高さが小さいため、通常の本文よりもはみ出しやすい条件になります。
+- 下段の本文とまとめ欄も同じ縮小倍率で表示されるか確認します。
+
+::conc::
+上下分割でもコードブロックの高さを含めて判定します。
+
+---
+layout: section
+---
+
+# まとめ
+
+---
+layout: default
+---
+
+::title::
+まとめ
+
+::default::
+<div class="w-full h-full flex flex-col justify-center items-center gap-6 text-center">
   <p class="text-3xl font-bold text-neutral-900">
-    Slidevは自由自在な記述ができることが強み！！
+    レイアウトはスロット単位で使い分けます。
+  </p>
+  <p class="text-xl text-neutral-700">
+    default / two-cols / three-cols / two-rows / bento を用途に合わせて選択してください。
   </p>
 </div>

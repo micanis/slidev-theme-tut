@@ -13,15 +13,15 @@ import bgImage from "../assets/BackGround.png"
     </div>
 
     <div v-fit class="absolute content-area">
-      <div class="content-grid">
+      <div class="content-grid" :class="{ 'has-conc': $slots.conc }">
 
-        <div class="min-h-0 h-full grid grid-rows-2 gap-6">
+        <div class="rows-grid">
 
-          <div class="relative h-full text-xl text-neutral-800 leading-relaxed overflow-hidden">
+          <div class="relative min-h-0 text-xl text-neutral-800 leading-relaxed overflow-hidden">
             <slot name="top"/>
           </div>
 
-          <div class="relative h-full text-xl text-neutral-800 leading-relaxed overflow-hidden">
+          <div class="relative min-h-0 text-xl text-neutral-800 leading-relaxed overflow-hidden">
             <slot name="bottom" />
           </div>
 
@@ -57,9 +57,28 @@ import bgImage from "../assets/BackGround.png"
   width: 100%;
   height: 100%;
   display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.content-grid.has-conc {
   grid-template-rows: minmax(0, 1fr) minmax(2.5rem, auto);
   gap: 1rem;
+}
+
+.rows-grid {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   overflow: hidden;
+}
+
+.rows-grid > * {
+  flex: 0 1 auto;
 }
 
 .content-grid :deep(p) {

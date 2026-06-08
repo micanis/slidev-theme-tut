@@ -13,7 +13,7 @@ import bgImage from "../assets/BackGround.png"
     </div>
 
     <div v-fit class="absolute content-area">
-      <div class="content-grid">
+      <div class="content-grid" :class="{ 'has-conc': $slots.conc }">
 
         <div class="min-h-0 h-full grid grid-cols-3 gap-8">
 
@@ -60,9 +60,14 @@ import bgImage from "../assets/BackGround.png"
   width: 100%;
   height: 100%;
   display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+}
+
+.content-grid.has-conc {
   grid-template-rows: minmax(0, 1fr) minmax(2.5rem, auto);
   gap: 1rem;
-  overflow: hidden;
 }
 
 .content-grid :deep(p) {
